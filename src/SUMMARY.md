@@ -1,5 +1,5 @@
 # Summary
 
 - [Introduction](./intro.md)
-- [Let's "write" a "programm"](./cook.md)
-- [Baby Steps"](./baby.md)
+- [Let's "write" a "programm"](./chapter1/cook.md)
+- [Baby Steps"](./chapter2/baby.md)

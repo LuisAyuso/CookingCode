@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Introduction - </title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+        <link rel="stylesheet" href="book.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <link rel="shortcut icon" href="favicon.png">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+
+        <!-- MathJax -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Fetch JQuery from CDN but have a local fallback -->
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script>
+            if (typeof jQuery == 'undefined') {
+                document.write(unescape("%3Cscript src='jquery.js'%3E%3C/script%3E"));
+            }
+        </script>
+    </head>
+    <body class="light">
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme = localStorage.getItem('theme');
+            if (theme == null) { theme = 'light'; }
+            $('body').removeClass().addClass(theme);
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var sidebar = localStorage.getItem('sidebar');
+            if (sidebar === "hidden") { $("html").addClass("sidebar-hidden") }
+            else if (sidebar === "visible") { $("html").addClass("sidebar-visible") }
+        </script>
+
+        <div id="sidebar" class="sidebar">
+            <ul class="chapter"><li><a href="./intro.html" class="active"><strong>1.</strong> Introduction</a></li><li><a href="./chapter1/cook.html"><strong>2.</strong> Let's &quot;write&quot; a &quot;programm&quot;</a></li><li><a href="./chapter1/baby.html"><strong>3.</strong> Baby Steps</a></li></ul>
+        </div>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar" class="menu-bar">
+                    <div class="left-buttons">
+                        <i id="sidebar-toggle" class="fa fa-bars"></i>
+                        <i id="theme-toggle" class="fa fa-paint-brush"></i>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <i id="print-button" class="fa fa-print" title="Print this book"></i>
+                    </div>
+                </div>
+
+                <div id="content" class="content">
+                    <a class="header" href="./intro.html#introduction" id="introduction"><h1>Introduction</h1></a>
+<p>This is a book about programming in the most general way. Sometimes members of my family or close friends ask me to teach them how to program; the reasons why they want to learn remain obscure to me, but I can see that they value the skills I develop which not only make me get understood with this new world we live in but make me like and enjoy my technological path throw life.</p>
+<p>This code pretends to be language agnostic, and to enforce that, several different languages will be used to illustrate concepts. Far from confusing you, this is meant to highlight the most important tools that need to be considered. Then, learning the specific details of any given technology is just a matter of typing the right questions in your favorite search engine.</p>
+<a class="header" href="./intro.html#why-cooking" id="why-cooking"><h2>Why cooking?</h2></a>
+<p>Some day I realized that every time I explained something about programming, I always illustrate it with cooking examples. I believe than cooking and programming have many characteristics in common, but (over any other positive trait) I like cooking examples because anyone can relate to them. You do not need to be a Michelin cook to know what is an egg or a pan. Everyone is familiar with the basic steps in the kitchen, and once we move into more complicated dishes, we introduce more complexity in the form of kitchen staff, new tools and more sophisticated ingredients. Just like programming... You will see!</p>
+<a class="header" href="./intro.html#what-is-programming" id="what-is-programming"><h2>What is programming?</h2></a>
+<p>Most people jumps into programming for many reasons, and (at some degree all of them) are valid. Nevertheless I would like to start by describing what programming can do for you, before we can find out what can you do for programming.</p>
+<p>You may have hear about &quot;solving&quot;problems by using computers, and this is just plain wrong. We solve problems by applying some analytical method some guy (much more smarter than me) made up. We may even solve problems by pushing a brute force try-and-error approach over all the possible answers. Programming is the art of automatizing, getting those ideas and put them together into an automatic process that can be executed by a machine, hopefully with minimal human intervention.</p>
+<p>To achieve this objective, a programmer needs to develop some skills which are common to every language, environment or problem we want to solve. That skills set requires us to learn how to Decompose, to Abstract, and Orchestrate processes from any nature.</p>
+<a class="header" href="./intro.html#decompose" id="decompose"><h3>Decompose:</h3></a>
+<p>To be able to decompose into steps, and structures the process we work on. Where steps are the operations we need to execute or How to do and When, while the structures mean on What are we going to do something.</p>
+<p>This skill can be leaned and trained. Knowledge about the problem we work on can solve to decompose, as well as understanding the environment we work on. Learning about data structures and their properties may help us to choose the right tool for the job.</p>
+<a class="header" href="./intro.html#abstract" id="abstract"><h3>Abstract:</h3></a>
+<p>Sometimes, usually during Christmas dinners, someone states: Leonardo da Vinci was the last man to know about everything!. Although they may be right, it is pretty complicated (and totally unnecessary) to track down every detail of your program, as it is complicated nowadays to fully understand every phenomena in the universe. The amount of fields of human knowledge is huge! And so it is the amount of fields that contributed to nowadays computing systems.</p>
+<p>Computers are vast, layered and complex systems. Many brilliant minds have been working hard to put together little pieces. Pieces which later on have been used by any other mind (brilliant or not) as building blocks of the next layer. A programmer needs to learn to abstract himself from the underlying systems, choosing when to pay attention to a given component of the system. Programmers develop the skill to ignore everything what is out of the current scope.</p>
+<p>It is Just like any other process of the real world! After all, it is very unlikely that you hunt, butcher, and cook all together your own food. Although you can always go that way if you have the time.</p>
+<a class="header" href="./intro.html#orchestrate" id="orchestrate"><h3>Orchestrate:</h3></a>
+<p>Now that we have successfully understood the nature of the process we want to automatize, and what is in the reach of our effort is time to put some order and get the job done. We need to cope with those steps we identified by decomposing the problem, and tailor them in time so we they are executed in the correct order. Programmers need to understand timing, since in most of cases the problem is not what to do but when.</p>
+<p>Most certainly the more complicated skill to grow; as we program some code and it grows fat in number of lines, the visibility we have over the big picture turns blurry and partial. This situation turns even more chaotic when more than one programmer has contributed, and it turns desperate if you have no one who to ask.</p>
+<p>Orchestrating your processes in a way that they do not interfere with each other, is a must. The correctness of your solution depends on it. Orchestrating your processes in a way that they do not interfere with anyone else processes, is a desirable skill which will sometimes make you think if your are the only one sane person in the world.</p>
+<a class="header" href="./intro.html#enjoy" id="enjoy"><h3>Enjoy:</h3></a>
+<p>Yes, enjoy. Because code can be dirty and ugly, and the process you are working on could not be the most exciting task to do. Even in this scenarios, programming is challenging, and you can always rely in the fact that there is a different way to do (most of the cases there will be a better way to go). Measuring yourself and accepting the challenge will make you a better programmer every day, in the same manner sports do.</p>
+
+                </div>
+
+                <!-- Mobile navigation buttons -->
+                
+
+                
+                    <a href="./chapter1/cook.html" class="mobile-nav-chapters next">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+
+            </div>
+
+            
+
+            
+                <a href="./chapter1/cook.html" class="nav-chapters next" title="You can navigate through the chapters using the arrow keys">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            
+
+        </div>
+
+
+        <!-- Local fallback for Font Awesome -->
+        <script>
+            if ($(".fa").css("font-family") !== "FontAwesome") {
+                $('<link rel="stylesheet" type="text/css" href="_FontAwesome/css/font-awesome.css">').prependTo('head');
+            }
+        </script>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3001");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload(true); // force reload from server (not from cache)
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+    
+
+        
+
+
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+    </body>
+</html>

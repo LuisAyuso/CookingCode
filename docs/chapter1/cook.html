@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Let's &quot;write&quot; a &quot;programm&quot; - Cooking Code</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="A book to learn how to program in the most general sense.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <base href="../">
+
+        <link rel="stylesheet" href="book.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <link rel="shortcut icon" href="favicon.png">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+
+        <!-- MathJax -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Fetch JQuery from CDN but have a local fallback -->
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script>
+            if (typeof jQuery == 'undefined') {
+                document.write(unescape("%3Cscript src='jquery.js'%3E%3C/script%3E"));
+            }
+        </script>
+    </head>
+    <body class="light">
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme = localStorage.getItem('theme');
+            if (theme == null) { theme = 'light'; }
+            $('body').removeClass().addClass(theme);
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var sidebar = localStorage.getItem('sidebar');
+            if (sidebar === "hidden") { $("html").addClass("sidebar-hidden") }
+            else if (sidebar === "visible") { $("html").addClass("sidebar-visible") }
+        </script>
+
+        <div id="sidebar" class="sidebar">
+            <ul class="chapter"><li><a href="./intro.html"><strong>1.</strong> Introduction</a></li><li><a href="./chapter1/cook.html" class="active"><strong>2.</strong> Let's &quot;write&quot; a &quot;programm&quot;</a></li><li><a href="./chapter2/baby.html"><strong>3.</strong> Baby Steps&quot;</a></li></ul>
+        </div>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar" class="menu-bar">
+                    <div class="left-buttons">
+                        <i id="sidebar-toggle" class="fa fa-bars"></i>
+                        <i id="theme-toggle" class="fa fa-paint-brush"></i>
+                    </div>
+
+                    <h1 class="menu-title">Cooking Code</h1>
+
+                    <div class="right-buttons">
+                        <i id="print-button" class="fa fa-print" title="Print this book"></i>
+                    </div>
+                </div>
+
+                <div id="content" class="content">
+                    <a class="header" href="./chapter1/cook.html#lets-write-some-program" id="lets-write-some-program"><h1>Let's &quot;write&quot; some &quot;program&quot;</h1></a>
+<p>Programming automatizes the way we solve a problem by describing this procedure and writing the description of steps in a certain language. This procedure is
+called algorithm, and identifying it is one of the most time consuming tasks a programmer deals with.</p>
+<p>The one thing you need to write an algorithm is... A problem. Something you can describe, and hopefully someone or something can read your description and solve
+the problem. You may think that you need a computer (or even a programming language) to program, but this just not true. Good programmers were writing
+extraordinary complicated programs in the Victorian era. And many of the mathematical procedures used in geometry nowadays were carefully described in Classic
+Greece. This means that if you can describe precisely enough a procedure, it is a program! Although the machine which understands your description may not have
+been yet invented.</p>
+<p>As promised in the title of this book, we will use cooking examples. Let's sketch the first one:</p>
+<p>##How to fry an egg:
+No, we are not going to implement a retro science fiction robot to cook eggs, our first program will be a detailed description on how to carry out a procedure,
+the frying of an egg in this case:</p>
+<ul>
+<li>Take a pan</li>
+<li>Put some oil on it.</li>
+<li>Heat up the pan.</li>
+<li>Put the egg in the hot oil.</li>
+<li>You may flip it, or maybe not.</li>
+<li>Put a little bit of salt (please mind your health).</li>
+<li>Serve the egg in a plate.</li>
+</ul>
+<p>Although this description would be good enough for anyone who has ever stepped in a kitchen. It is far from becoming a program:</p>
+<a class="header" href="./chapter1/cook.html#sorry-what" id="sorry-what"><h3>Sorry, what?</h3></a>
+<p>Ambiguities like &quot;flip it&quot; or a &quot;little bit of&quot; may not be understood by our cooking partner as we read the description. We will be immediately acknowledged as
+our listener interrupts us by saying: pardon?</p>
+<ul>
+<li>Instead of addressing the egg by &quot;it&quot; we may say &quot;flip the egg&quot;, and in this manner no other object in the kitchen will be flipped.</li>
+<li>Instead of a little bit, we may need to be fully specific and state how much salt is a little bit. Computers have no judgment, and we need to write down our
+judgment every time, if not writing a program on how to reach this judgment.</li>
+</ul>
+<p>Programming languages are designed to be very specific, therefore it will require that we take the effort to describe every step, and we need to do it in a very
+specific fashion. This mental process is shortly internalized as we write more programs, and we will be almost immediately corrected if what we wrote can not be
+understood.</p>
+<p>This kind of errors are the first barrier we will face when learning a new language. In any case it is just a phase, and it will get shorter as we learn new
+paradigms.</p>
+<a class="header" href="./chapter1/cook.html#youve-got-to-crack-a-few-eggs-to-make-an-omelet" id="youve-got-to-crack-a-few-eggs-to-make-an-omelet"><h1>You've got to crack a few eggs to make an omelet.</h1></a>
+<p>You might have realized that in our egg-cooking-algorithm we never stated to crack the egg. Is not a problem if you did not realize, since you might have the
+common sense to do so. Nevertheless, computers are famous for their lack of common sense, and they are vulnerable to ignore obvious details. A program like the
+one we just described would become the worst of our nightmares, since it can be understood, it can be executed but the result is not what you wanted.</p>
+<p>This kind of problem is where your skills get really tested. It is virtually impossible for any tool to assist you, since the machine does not know anything
+about the domain you are working on. If you would try to teach to a martian maid how to fry an egg, is most certain that she will not crack the egg, since
+martian chickens are swimming mammals.</p>
+<a class="header" href="./chapter1/cook.html#exercises" id="exercises"><h3>Exercises:</h3></a>
+<p>The following are exercises you can do mentally. Just take a few seconds to think on every step, and try to be both precise but short in your descriptions.</p>
+<ul>
+<li>How to cook an omelet?</li>
+<li>How to start the car engine?</li>
+</ul>
+
+                </div>
+
+                <!-- Mobile navigation buttons -->
+                
+                    <a href="./intro.html" class="mobile-nav-chapters previous">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="./chapter2/baby.html" class="mobile-nav-chapters next">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+
+            </div>
+
+            
+                <a href="./intro.html" class="nav-chapters previous" title="You can navigate through the chapters using the arrow keys">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+            
+
+            
+                <a href="./chapter2/baby.html" class="nav-chapters next" title="You can navigate through the chapters using the arrow keys">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            
+
+        </div>
+
+
+        <!-- Local fallback for Font Awesome -->
+        <script>
+            if ($(".fa").css("font-family") !== "FontAwesome") {
+                $('<link rel="stylesheet" type="text/css" href="_FontAwesome/css/font-awesome.css">').prependTo('head');
+            }
+        </script>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3001");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload(true); // force reload from server (not from cache)
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+    
+
+        
+
+
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+    </body>
+</html>
