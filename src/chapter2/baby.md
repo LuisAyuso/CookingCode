@@ -30,10 +30,11 @@ true && true
 
 The snippets presented describe all the same 4 operations:
 
-- 1 (value one) + (plus, addition) 10 (value ten), which should result in a value 11 once executed.
-- true (value true or yes) or (the logical distinction) false (value false or not), which result would be true
-- true (value true or yes) and (the logical conjunction) true (value true or yes), which result would be true
-- 1.0 (value 1 with 0 decimals) multiply (times, multiplication) 2.0 (value 2 with 0 decimals), which result would be 3.0
+- **1** (value one) **+** (plus, addition) **10** (value ten), which should result in a value **!1** once executed.
+- **true** (value **true** or yes) or (the logical distinction) false (value false or not), which result would be **true**
+- **true** (value true or yes) and (the logical conjunction) **true** (value true or yes), which result would be **true**
+- **1.0** (value 1 with 0 decimals) multiply (times, multiplication) **2.0** (value 2 with 0 decimals), which result would be **3.0**
+
 Notice how similar are the notations in the 4 chosen languages. This is mostly because all four languages belong to the same family of imperative languages, where is most usual to find the infix notation.
 
 Each one of the 4 operations is what we will call an expression. Expressions are the next level of programming building blocks, and represents the smallest unit we can write of something that can be executed: a mathematical operator describes what to do, but without operands there is nothing to do so far. All the 4 examples present one operator and two operands.
@@ -41,15 +42,20 @@ Each one of the 4 operations is what we will call an expression. Expressions are
 ### Where can I find my results? Variables.
 I know that 1 plus 2 is 3, I do not really need a computer program to calculate that, so what is the point?
 
-The result of an operation can be stored, so we can use it later on. From the cooking point of view this means that will get two ingredients and combine into something: I mix coffee with milk and from now on I will call it cafe late, then I pour this brewage into a cup. The cup becomes the vessel of the result of my operation (the mix) and from this point on, if I need to do anything else with the brewage I will just use the cup: instead of delivering the cafe late to the client, I will just hand over the cup.
+The result of an operation can be stored, so we can use it later on. From the cooking point of view this means that will get two ingredients and combine into something: I mix coffee with milk and from now on I will call it cafe late, then I pour the beverage into a cup. The cup becomes the vessel of the result of my operation (the mix) and from this point on, if I need to do anything else with the beverage I will just use the cup: instead of delivering the cafe late to the client, I will just hand over the cup.
 
-no cup:	python (no variables):
-mix coffee and milk	1 + 2
-serve coffe and milk to the client	80 * 1 + 2
-with cup:	python (with variables):
-mix coffee and milk, pour it in a cup	x = 1 + 2
-serve cup to client	80 * x
-Notice that by using a cup, we are able to serve any kind of brewage to our customers. In the same manner, if we do not use variables in a program (althoug we can write a pretty big program), we would never be able to compute a different values; since we will write every operand as an specific value.
+
+| no cup        | Python (no variables):  | 
+| ------------- |:-------------:| 
+| mix coffee and milk       | ```1 + 2```    | 
+| serve coffee to client    | ``` 80 * 1 + 2 ``` |   
+
+| with cup:	 | Python (with variables): |
+| ------------- |:-------------:| 
+| mix coffee and milk, pour it in a cupi | ```	x = 1 + 2 ``` |
+| serve cup to client | ```80 * x ```|
+
+Notice that by using a cup, we are able to serve any kind of brewage to our customers. In the same manner, if we do not use variables in a program (although we can write a pretty big program), we would never be able to compute a different values; since we will write every operand as an specific value.
 
 Variables are the way we have to store the result of computations (during program live time) and have many interesting properties (most of them common to many computer languages), although exact details on how variables work and what can you do with them are specific to the language you are learning, please check your documentation before doing assumptions.
 
@@ -89,7 +95,7 @@ The main difference between the last two snippets is that Python does not requir
 
 Every expression in any language has a type. Just like cooking: some broth and toppings of any kind makes a soup while some sweet dough with some icing makes a cake. Whenever you serve the cake in a pan, dish or chopping board depends on how picky the cook is.
 
-Languages can be more or less type sensitive: the big picture here is that some languages like Javascript or Python are able to infer the type of a given variable from the expression we use to initialize it, and other languages force us to write up front what kind of content this container is going to hold.
+Languages can be more or less type sensitive: the big picture here is that some languages like JavaScript or Python are able to infer the type of a given variable from the expression we use to initialize it, and other languages force us to write up front what kind of content this container is going to hold.
 
 A word of warning: serving soup on a flat dish may turn in disaster, having appointed in the recipe to use a bowl may make life easier on the long cooks. I have experienced that strongly typed languages are more robust as the project grows, while dynamic typing is much faster (to develop and test) in the early prototyping phases. You may choose your weapon depending on the scope and resources available.
 
@@ -128,7 +134,7 @@ a = 1
 a = a + 1 + 12 + a * 3
 a + 1
 ``` 
-Every expression is an statement on its own, no matter how complex turns to be. The end is marked by an end of statement token, which in case of C, C++, Java, Javascript, Rust and others is a semi-colon ( ; ) character, while other languages like Python use the end of line. The end of line is an invisible character that text software use to mark where a line ends and a new one begins. In other words, In Python we write one statement per line while in the _C, C++, Java, Javascript and Rust _we are allowed to write more than one (still though I may have something to say about this in the style section).
+Every expression is an statement on its own, no matter how complex turns to be. The end is marked by an end of statement token, which in case of C, C++, Java, JavaScript, Rust and others is a semi-colon ( ; ) character, while other languages like Python use the end of line. The end of line is an invisible character that text software use to mark where a line ends and a new one begins. In other words, In Python we write one statement per line while in the _C, C++, Java, Javascript and Rust _we are allowed to write more than one (still though I may have something to say about this in the style section).
 
 ## Control Flow
 

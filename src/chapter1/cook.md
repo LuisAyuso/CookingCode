@@ -10,7 +10,7 @@ been yet invented.
 
 As promised in the title of this book, we will use cooking examples. Let's sketch the first one:
 
-##How to fry an egg:
+### How to fry an egg:
 No, we are not going to implement a retro science fiction robot to cook eggs, our first program will be a detailed description on how to carry out a procedure,
 the frying of an egg in this case:
 
@@ -40,7 +40,7 @@ understood.
 This kind of errors are the first barrier we will face when learning a new language. In any case it is just a phase, and it will get shorter as we learn new
 paradigms.
 
-# You've got to crack a few eggs to make an omelet.
+### You've got to crack a few eggs to make an omelet
 
 You might have realized that in our egg-cooking-algorithm we never stated to crack the egg. Is not a problem if you did not realize, since you might have the
 common sense to do so. Nevertheless, computers are famous for their lack of common sense, and they are vulnerable to ignore obvious details. A program like the
