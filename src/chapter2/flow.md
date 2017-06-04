@@ -75,8 +75,21 @@ There are many flavors in conditional statements and some languages may provide 
 
 A forking condition enables one path of steps or another depending on a given decision:
 
-_"If the potatoes big, cut them in 4 pieces, otherwise, cut them in half."_
+_"If the potatoes are big, cut them in 4 pieces, otherwise, cut them in half."_
 
 This condition will prepare the cook to handle two possible scenarios. Although we do not know what kind of potatoes he may find in the kitchen, our recipe is ready. With conditions we can prepare the program to evaluate the situation and act. 
 
 #### Calculate the absolute value of an Integer number:
+
+The absolute value of an integer value is the value of the digits without the sign. This means that the absolute value of 1 is 1 while the absolute valu of -1 is 1.
+
+``` C++
+if (x > 0)
+{
+    x = x
+}
+else
+{
+   x = -x;
+} 
+```
