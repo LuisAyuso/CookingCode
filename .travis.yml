@@ -20,7 +20,7 @@ env:
 script:
     - set -
     # install rust (for cargo)
-    - curl https://sh.rustup.rs -sSf | sh
+    - curl https://sh.rustup.rs -sSf | sh -s -- -y
     # create pages
     - cargo install mdbook
     - mdbook build
