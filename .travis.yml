@@ -18,13 +18,18 @@ env:
 
 # This is the script to build the docs on travis, then deploy
 script:
+
     - set -
+
     # install rust (for cargo)
     - curl https://sh.rustup.rs -sSf | sh -s -- -y
+    - export PATH="$HOME/.cargo/bin:$PATH"
+
     # create pages
     - cargo install mdbook
     - mdbook build
     - mdbook test
+
     # deploy tool
     - pip3 install doctr
     - doctr deploy
