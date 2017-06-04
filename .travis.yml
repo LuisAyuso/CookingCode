@@ -1,11 +1,16 @@
-# doctr requires python >=3.5
-language: python rust
-python:
-    - 3.6
-rust:
-    - stable
+matrix:
 
-sudo: false
+    # doctr requires python >=3.5
+    language: python 
+    python:
+        - 3.6
+
+    # mdbook requires rust 
+    language: rust 
+    rust:
+        - stable
+
+sudo: true
 # This gives doctr the key we've generated
 env:
     global:
@@ -14,11 +19,13 @@ env:
 # This is the script to build the docs on travis, then deploy
 script:
     - set -
+    # install rust (for cargo)
+    - curl https://sh.rustup.rs -sSf | sh
     # create pages
     - cargo install mdbook
     - mdbook build
     - mdbook test
     # deploy tool
-    - pip install doctr
+    - pip3 install doctr
     - doctr deploy
 
