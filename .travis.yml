@@ -1,0 +1,24 @@
+# doctr requires python >=3.5
+language: python; rust
+python:
+    - 3.6
+rust:
+    - 1.19
+
+sudo: false
+# This gives doctr the key we've generated
+env:
+    global:
+        - secure: "nNjJro0ybG2dOH7ELAHShBl5XHAK5uoBjBjovxRKJYoG4X/yrjipd44cWmKAOGsfu69BcrZPrh29yUsMiNMh9bDLAPJ0/aPjALjoXbnVfc/iyowa361JWqY3IprJDWCXgZfSa7SBQWudQUHEq9bYOC6wyWIvNnZ8hIyDnnSLg6NDkE9MMKijk+35IpGeZ5lXxgVByK9qt2NKBswxm1qYQSqW4LjtkI8VPk6TSi5ej2ip09EUCrDogjjnD/YbU+4vQzq8Hl06+gggV3MMtnUhiOXcSp2YQmmmA5G8/Xv5osXB7NWnwGmxMoQ6IYbbvGIH9KpujeY98lNd/n18kCJob4fMOXmpw58Z1FNL4SjC0txO2SFlkoFwpKzX9N/0k7XOQvLks2rK3x1eNLA4DLQR1gtN2Lif9qHAQnqXUpRLM0zTnLDEKvqWwBjC7WU9K/cxh/rRh8wPl57fOvMb/CRVok682KBQGBOrQ/yk9Jka7YHbnXcKk1T5hS2/IGR+3VZ+GAZrpBMoiBHIS//Us8+PhE9SdnyNyAdOFyIUewGNXkU6R1W3RKQ51vnnnELMnPJcgoodmzJuXAePfDljpMzajc/5fXbf/LdZJ8pRcFBmPM8xIoi+NoK/NOaEsntkZcRDzCNbsy+Z6kubpqIypG4mE6EwGHnSd4FmXt2+gLqxTEc="
+
+# This is the script to build the docs on travis, then deploy
+script:
+    - set -
+    # create pages
+    - cargo install mdbook
+    - mdbook build
+    - mdbook test
+    # deploy tool
+    - pip install doctr
+    - doctr deploy
+
