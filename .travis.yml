@@ -1,14 +1,7 @@
-matrix:
-
-    # doctr requires python >=3.5
-    language: python 
-    python:
-        - 3.6
-
-    # mdbook requires rust 
-    language: rust 
-    rust:
-        - stable
+# doctr requires python >=3.5
+language: python 
+python:
+    - 3.6
 
 sudo: true
 # This gives doctr the key we've generated
@@ -31,6 +24,6 @@ script:
     - mdbook test
 
     # deploy tool
-    - pip3 install doctr
+    - pip install doctr
     - doctr deploy
 
