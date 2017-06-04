@@ -2,11 +2,12 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Welcome - Cooking Code</title>
+        <title>Variables - Cooking Code</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="A book to learn how to program in the most general sense.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <base href="../">
 
         <link rel="stylesheet" href="book.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
@@ -47,7 +48,7 @@
         </script>
 
         <div id="sidebar" class="sidebar">
-            <ul class="chapter"><li class="affix"><a href="./welcome.html" class="active">Welcome</a></li><li><a href="./intro.html"><strong>1.</strong> Introduction</a></li><li><a href="./chapter1/cook.html"><strong>2.</strong> Let's &quot;write&quot; a &quot;programm&quot;</a></li><li><a href="./chapter2/baby.html"><strong>3.</strong> Baby Steps</a></li><li><ul class="section"><li><a href="./chapter2/ops.html"><strong>3.1.</strong> Operations</a></li><li><a href="./chapter2/variables.html"><strong>3.2.</strong> Variables</a></li><li><a href="./chapter2/types.html"><strong>3.3.</strong> Types</a></li><li><a href="./chapter2/flow.html"><strong>3.4.</strong> Control Flow</a></li><li><a href="./chapter2/functions.html"><strong>3.5.</strong> Functions</a></li><li><a href="./chapter2/program.html"><strong>3.6.</strong> The Program</a></li></ul></li></ul>
+            <ul class="chapter"><li class="affix"><a href="./welcome.html">Welcome</a></li><li><a href="./intro.html"><strong>1.</strong> Introduction</a></li><li><a href="./chapter1/cook.html"><strong>2.</strong> Let's &quot;write&quot; a &quot;programm&quot;</a></li><li><a href="./chapter2/baby.html"><strong>3.</strong> Baby Steps</a></li><li><ul class="section"><li><a href="./chapter2/ops.html"><strong>3.1.</strong> Operations</a></li><li><a href="./chapter2/variables.html" class="active"><strong>3.2.</strong> Variables</a></li><li><a href="./chapter2/types.html"><strong>3.3.</strong> Types</a></li><li><a href="./chapter2/flow.html"><strong>3.4.</strong> Control Flow</a></li><li><a href="./chapter2/functions.html"><strong>3.5.</strong> Functions</a></li><li><a href="./chapter2/program.html"><strong>3.6.</strong> The Program</a></li></ul></li></ul>
         </div>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -67,17 +68,37 @@
                 </div>
 
                 <div id="content" class="content">
-                    <p>This is a book about programming in the most general way. Sometimes members of my family or close friends ask me to teach them how to program; the reasons why they want to learn remain obscure to me, but I can see that they value the skills set I have develop.
-This skill set does not only let me understand this new world we live in, but it allows me to like and enjoy technology.</p>
-<p>Is my intention with this book to ilustrate the mental process of programming, as if a caricature were. With this I hope you may be entretained as I try to describe the intrinsics of writing a computer program.</p>
+                    <a class="header" href="./chapter2/variables.html#where-can-i-find-my-results-variables" id="where-can-i-find-my-results-variables"><h2>Where can I find my results? Variables.</h2></a>
+<p>I know that 1 plus 2 is 3, I do not really need a computer program to calculate that, so what is the point?</p>
+<p>The result of an operation can be stored, so we can use it later on. From the cooking point of view this means that will get two ingredients and combine into something: I mix coffee with milk and from now on I will call it cafe late, then I pour the beverage into a cup. The cup becomes the vessel of the result of my operation (the mix) and from this point on, if I need to do anything else with the beverage I will just use the cup: instead of delivering the cafe late to the client, I will just hand over the cup.</p>
+<table><thead><tr><th> no cup        </th><th align="center"> Python (no variables):  </th></tr></thead><tbody>
+<tr><td> mix coffee and milk       </td><td align="center"> <code>1 + 2</code>    </td></tr>
+<tr><td> serve coffee to client    </td><td align="center"> <code>80 * 1 + 2</code> </td></tr>
+</tbody></table>
+<table><thead><tr><th> with cup:  </th><th> Python (with variables): </th></tr></thead><tbody>
+<tr><td> mix coffee and milk, pour it in a cupi </td><td align="center"> <code>x = 1 + 2</code> </td></tr>
+<tr><td> serve cup to client </td><td align="center"> <code>80 * x</code></td></tr>
+</tbody></table>
+<p>Notice that by using a cup, we are able to serve any kind of brewage to our customers. In the same manner, if we do not use variables in a program (although we can write a pretty big program), we would never be able to compute a different values; since we will write every operand as an specific value.</p>
+<p>Variables are the way we have to store the result of computations (during program live time) and have many interesting properties (most of them common to many computer languages), although exact details on how variables work and what can you do with them are specific to the language you are learning, please check your documentation before doing assumptions.</p>
+<p>And.. How would this look like in any of the other languages:</p>
+<a class="header" href="./chapter2/variables.html#c" id="c"><h4>C</h4></a>
+<pre><code class="language-C">int x = 1 + 2;
+80 * x;
+</code></pre>
+<p>Notice the int word? This introduces us to the typing of expressions.</p>
 
                 </div>
 
                 <!-- Mobile navigation buttons -->
                 
+                    <a href="./chapter2/ops.html" class="mobile-nav-chapters previous">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
 
                 
-                    <a href="./intro.html" class="mobile-nav-chapters next">
+                    <a href="./chapter2/types.html" class="mobile-nav-chapters next">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 
@@ -85,9 +106,13 @@ This skill set does not only let me understand this new world we live in, but it
             </div>
 
             
+                <a href="./chapter2/ops.html" class="nav-chapters previous" title="You can navigate through the chapters using the arrow keys">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+            
 
             
-                <a href="./intro.html" class="nav-chapters next" title="You can navigate through the chapters using the arrow keys">
+                <a href="./chapter2/types.html" class="nav-chapters next" title="You can navigate through the chapters using the arrow keys">
                     <i class="fa fa-angle-right"></i>
                 </a>
             

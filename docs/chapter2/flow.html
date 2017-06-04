@@ -1,0 +1,197 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Control Flow - Cooking Code</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="A book to learn how to program in the most general sense.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <base href="../">
+
+        <link rel="stylesheet" href="book.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <link rel="shortcut icon" href="favicon.png">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+
+        <!-- MathJax -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Fetch JQuery from CDN but have a local fallback -->
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script>
+            if (typeof jQuery == 'undefined') {
+                document.write(unescape("%3Cscript src='jquery.js'%3E%3C/script%3E"));
+            }
+        </script>
+    </head>
+    <body class="light">
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme = localStorage.getItem('theme');
+            if (theme == null) { theme = 'light'; }
+            $('body').removeClass().addClass(theme);
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var sidebar = localStorage.getItem('sidebar');
+            if (sidebar === "hidden") { $("html").addClass("sidebar-hidden") }
+            else if (sidebar === "visible") { $("html").addClass("sidebar-visible") }
+        </script>
+
+        <div id="sidebar" class="sidebar">
+            <ul class="chapter"><li class="affix"><a href="./welcome.html">Welcome</a></li><li><a href="./intro.html"><strong>1.</strong> Introduction</a></li><li><a href="./chapter1/cook.html"><strong>2.</strong> Let's &quot;write&quot; a &quot;programm&quot;</a></li><li><a href="./chapter2/baby.html"><strong>3.</strong> Baby Steps</a></li><li><ul class="section"><li><a href="./chapter2/ops.html"><strong>3.1.</strong> Operations</a></li><li><a href="./chapter2/variables.html"><strong>3.2.</strong> Variables</a></li><li><a href="./chapter2/types.html"><strong>3.3.</strong> Types</a></li><li><a href="./chapter2/flow.html" class="active"><strong>3.4.</strong> Control Flow</a></li><li><a href="./chapter2/functions.html"><strong>3.5.</strong> Functions</a></li><li><a href="./chapter2/program.html"><strong>3.6.</strong> The Program</a></li></ul></li></ul>
+        </div>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar" class="menu-bar">
+                    <div class="left-buttons">
+                        <i id="sidebar-toggle" class="fa fa-bars"></i>
+                        <i id="theme-toggle" class="fa fa-paint-brush"></i>
+                    </div>
+
+                    <h1 class="menu-title">Cooking Code</h1>
+
+                    <div class="right-buttons">
+                        <i id="print-button" class="fa fa-print" title="Print this book"></i>
+                    </div>
+                </div>
+
+                <div id="content" class="content">
+                    <a class="header" href="./chapter2/flow.html#control-flow" id="control-flow"><h2>Control Flow</h2></a>
+<a class="header" href="./chapter2/flow.html#write-down-the-steps-and-follow--them-one-at-the-time" id="write-down-the-steps-and-follow--them-one-at-the-time"><h3>Write down the steps, and follow  them one at the time.</h3></a>
+<p>So far we have learned how to execute arithmetic operations and somehow tailor them into an arbitrary complex equation. This could be pretty useful but so far we are very little flexible regarding options, repetitions and unexpected scenarios.</p>
+<p>Let's draft a new recipe:</p>
+<a class="header" href="./chapter2/flow.html#how-to-cook-potatoes" id="how-to-cook-potatoes"><h4>How to cook potatoes:</h4></a>
+<ul>
+<li>Wash potatoes</li>
+<li>Cut potatoes in half</li>
+<li>Salt half potatoes</li>
+<li>Heat up oven 180ºC</li>
+<li>Cook for 25-30 minutes. Depending on size. Check till skin becomes wrinkled.</li>
+<li>Serve.</li>
+</ul>
+<p>First of all, I would like to acknowledge the steps enumeration. Those steps provide a temporal hint to us, and settles an order which will lead to success. Nevertheless is not the only order we can follow, as we can start heating up the oven as step 2, and then cut and salt the potatoes any time between 2 and 5. The rule of thumb here is to write something that can do the job, and we will optimize and improve the code once it is working.</p>
+<p>Although we will not pay much attention to the order variations, it is important to notice the steps as individual steps. It does not matter if we can heat up the oven while we cut the potatoes. Those are two separated steps and we will try to avoid interference, otherwise we will end up turning the oven on while we hold a potato in one hand and a knife in the other.</p>
+<p>In the same fashion, the code is separated in independent and self contained steps which allow us to reason about the whole procedure. These steps are the next level in programming building blocks and are called statements.</p>
+<p>Each programming language may have a different definition of statements, but (once again) imperative languages share most of the features:</p>
+<a class="header" href="./chapter2/flow.html#c-c-java" id="c-c-java"><h4>C, C++, Java</h4></a>
+<pre><code class="language-C">int a = 1;
+// this is one line comment
+a = a + 1 + 12 + a * 3;
+a + 1;
+</code></pre>
+<a class="header" href="./chapter2/flow.html#python" id="python"><h4>Python</h4></a>
+<pre><code class="language-Python"># this is a line comment 
+a = 1
+a = a + 1 + 12 + a * 3
+a + 1
+</code></pre>
+<p>Every expression is an statement on its own, no matter how complex turns to be. The end is marked by an end of statement token, which in case of C, C++, Java, JavaScript, Rust and others is a semi-colon ( <em>;</em> ) character, while other languages like Python use the end of line. The end of line is an invisible character that text software use to mark where a line ends and a new one begins. In other words, In Python we write one statement per line while in the _C, C++, Java, Javascript and Rust _we are allowed to write more than one (still though I may have something to say about this in the style section).</p>
+<p>Statements can be grouped into sequences, which will help us to better organize ourselves. Languages like C, C++, Java, JavaScript, Rust... join statements in a group by listing them between curly braces ( <em>{</em> and <em>}</em> ). On the other hand, Python uses the indentation as groping mechanism, which is somehow controversial by easy to adopt. Nevertheless we will talk about this issue later on.</p>
+<a class="header" href="./chapter2/flow.html#rust" id="rust"><h4>Rust</h4></a>
+<pre><pre class="playpen"><code class="language-rust"># #![allow(unused_variables)]
+#fn main() {
+{ 
+    let x = 1;
+    x + 1;
+}
+
+#}</code></pre></pre>
+<a class="header" href="./chapter2/flow.html#i-do-what-i-want-control-flow" id="i-do-what-i-want-control-flow"><h3>I do what I want. Control flow.</h3></a>
+<p>Now that we are able to describe steps, is time to address the second and main new issue in the current recipe:</p>
+<p><em>&quot;Cook for 25-30 mins. Depending on size. Check till skin becomes wrinkled&quot;</em></p>
+<p>How can we do this? So far we are only able to execute one operation after another. To be able to break a series of statements and switch to other series of statements we need a common feature of imperative languages: control flow.</p>
+<p>Our cook is cooking following the instructions and begins to cook the potatoes in the oven.</p>
+<ol>
+<li>He opens the oven and lays the potatoes inside.</li>
+<li>He closes the oven.</li>
+<li>He waits some time.</li>
+<li>He opens the oven.</li>
+<li>He checks if the skin looks wrinkled: If it does not, he goes back to point 2. Otherwise continues with 6</li>
+<li>Takes the potatoes out of the oven.</li>
+</ol>
+<p>Step 5 is slightly more complicated than other steps we have seen before. This is because it is a conditional statement.</p>
+<p>There are many flavors in conditional statements and some languages may provide even more, nevertheless there are only 2 significant groups:</p>
+<ul>
+<li>Forking conditions.</li>
+<li>Loop conditions.</li>
+</ul>
+<p>A forking condition enables one path of steps or another depending on a given decision:</p>
+<p><em>&quot;If the potatoes big, cut them in 4 pieces, otherwise, cut them in half.&quot;</em></p>
+<p>This condition will prepare the cook to handle two possible scenarios. Although we do not know what kind of potatoes he may find in the kitchen, our recipe is ready. With conditions we can prepare the program to evaluate the situation and act.</p>
+<a class="header" href="./chapter2/flow.html#calculate-the-absolute-value-of-an-integer-number" id="calculate-the-absolute-value-of-an-integer-number"><h4>Calculate the absolute value of an Integer number:</h4></a>
+
+                </div>
+
+                <!-- Mobile navigation buttons -->
+                
+                    <a href="./chapter2/types.html" class="mobile-nav-chapters previous">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="./chapter2/functions.html" class="mobile-nav-chapters next">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+
+            </div>
+
+            
+                <a href="./chapter2/types.html" class="nav-chapters previous" title="You can navigate through the chapters using the arrow keys">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+            
+
+            
+                <a href="./chapter2/functions.html" class="nav-chapters next" title="You can navigate through the chapters using the arrow keys">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            
+
+        </div>
+
+
+        <!-- Local fallback for Font Awesome -->
+        <script>
+            if ($(".fa").css("font-family") !== "FontAwesome") {
+                $('<link rel="stylesheet" type="text/css" href="_FontAwesome/css/font-awesome.css">').prependTo('head');
+            }
+        </script>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3001");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload(true); // force reload from server (not from cache)
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+    
+
+        
+
+
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+    </body>
+</html>

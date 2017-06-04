@@ -1,6 +1,5 @@
 # Introduction
-
-This manuscript pretends to be language agnostic, and to enforce that, several different languages will be used to illustrate concepts. Far from confusing you, this is meant to highlight the most important tools that need to be considered. Then, learning the specific details of any given technology is just a matter of typing the right questions in your favorite search engine.
+This code pretends to be language agnostic, and to enforce that, several different languages will be used to illustrate concepts. Far from confusing you, this is meant to highlight the most important tools that need to be considered. Then, learning the specific details of any given technology is just a matter of typing the right questions in your favorite search engine.
 
 ## Why cooking?
 

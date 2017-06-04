@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Baby Steps&quot; - Cooking Code</title>
+        <title>The Program - Cooking Code</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="A book to learn how to program in the most general sense.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -48,7 +48,7 @@
         </script>
 
         <div id="sidebar" class="sidebar">
-            <ul class="chapter"><li><a href="./intro.html"><strong>1.</strong> Introduction</a></li><li><a href="./chapter1/cook.html"><strong>2.</strong> Let's &quot;write&quot; a &quot;programm&quot;</a></li><li><a href="./chapter2/baby.html"><strong>3.</strong> Baby Steps&quot;</a></li></ul>
+            <ul class="chapter"><li class="affix"><a href="./welcome.html">Welcome</a></li><li><a href="./intro.html"><strong>1.</strong> Introduction</a></li><li><a href="./chapter1/cook.html"><strong>2.</strong> Let's &quot;write&quot; a &quot;programm&quot;</a></li><li><a href="./chapter2/baby.html"><strong>3.</strong> Baby Steps</a></li><li><ul class="section"><li><a href="./chapter2/ops.html"><strong>3.1.</strong> Operations</a></li><li><a href="./chapter2/variables.html"><strong>3.2.</strong> Variables</a></li><li><a href="./chapter2/types.html"><strong>3.3.</strong> Types</a></li><li><a href="./chapter2/flow.html"><strong>3.4.</strong> Control Flow</a></li><li><a href="./chapter2/functions.html"><strong>3.5.</strong> Functions</a></li><li><a href="./chapter2/program.html"><strong>3.6.</strong> The Program</a></li></ul></li></ul>
         </div>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -68,9 +68,11 @@
                 </div>
 
                 <div id="content" class="content">
-                    <a class="header" href="print.html#introduction" id="introduction"><h1>Introduction</h1></a>
-<p>This is a book about programming in the most general way. Sometimes members of my family or close friends ask me to teach them how to program; the reasons why they want to learn remain obscure to me, but I can see that they value the skills I develop which not only make me get understood with this new world we live in but make me like and enjoy my technological path throw life.</p>
-<p>This code pretends to be language agnostic, and to enforce that, several different languages will be used to illustrate concepts. Far from confusing you, this is meant to highlight the most important tools that need to be considered. Then, learning the specific details of any given technology is just a matter of typing the right questions in your favorite search engine.</p>
+                    <p>This is a book about programming in the most general way. Sometimes members of my family or close friends ask me to teach them how to program; the reasons why they want to learn remain obscure to me, but I can see that they value the skills set I have develop.
+This skill set does not only let me understand this new world we live in, but it allows me to like and enjoy technology.</p>
+<p>Is my intention with this book to ilustrate the mental process of programming, as if a caricature were. With this I hope you may be entretained as I try to describe the intrinsics of writing a computer program.</p>
+<a class="header" href="print.html#introduction" id="introduction"><h1>Introduction</h1></a>
+<p>This manuscript pretends to be language agnostic, and to enforce that, several different languages will be used to illustrate concepts. Far from confusing you, this is meant to highlight the most important tools that need to be considered. Then, learning the specific details of any given technology is just a matter of typing the right questions in your favorite search engine.</p>
 <a class="header" href="print.html#why-cooking" id="why-cooking"><h2>Why cooking?</h2></a>
 <p>Some day I realized that every time I explained something about programming, I always illustrate it with cooking examples. I believe than cooking and programming have many characteristics in common, but (over any other positive trait) I like cooking examples because anyone can relate to them. You do not need to be a Michelin cook to know what is an egg or a pan. Everyone is familiar with the basic steps in the kitchen, and once we move into more complicated dishes, we introduce more complexity in the form of kitchen staff, new tools and more sophisticated ingredients. Just like programming... You will see!</p>
 <a class="header" href="print.html#what-is-programming" id="what-is-programming"><h2>What is programming?</h2></a>
@@ -140,8 +142,10 @@ martian chickens are swimming mammals.</p>
 </ul>
 <a class="header" href="print.html#baby-steps" id="baby-steps"><h1>Baby steps:</h1></a>
 <p>In this chapter we will start programming real computers, using as an example some common languages.</p>
-<a class="header" href="print.html#the-beginning-boring-maths" id="the-beginning-boring-maths"><h3>The beginning: Boring maths.</h3></a>
-<p>Computer machines are designed to work on a set of basic mathematical operations because maths can be very useful. Beyond computing complicated mathematical formulas, simple maths provide us with the basic programming building blocks: Basic arithmetic to count things and basic logic to evaluate scenarios. We will use this basic building blocks to build equations that can be evaluated during the program execution.</p>
+<a class="header" href="print.html#basic-operations" id="basic-operations"><h2>Basic Operations:</h2></a>
+<p>Computer machines are designed to work on a set of basic mathematical operations because maths can be very useful. Beyond computing complicated mathematical
+ormulas, simple maths provide us with the basic programming building blocks: Basic arithmetic to count things and basic logic to evaluate scenarios. We will
+se this basic building blocks to build equations that can be evaluated during the program execution.</p>
 <p>The following snippets show some basic operations in different languages:</p>
 <a class="header" href="print.html#c-and-c" id="c-and-c"><h4>C and C++:</h4></a>
 <pre><code class="language-c">1 + 10
@@ -168,9 +172,12 @@ true &amp;&amp; true
 <li><strong>true</strong> (value true or yes) and (the logical conjunction) <strong>true</strong> (value true or yes), which result would be <strong>true</strong></li>
 <li><strong>1.0</strong> (value 1 with 0 decimals) multiply (times, multiplication) <strong>2.0</strong> (value 2 with 0 decimals), which result would be <strong>3.0</strong></li>
 </ul>
-<p>Notice how similar are the notations in the 4 chosen languages. This is mostly because all four languages belong to the same family of imperative languages, where is most usual to find the infix notation.</p>
-<p>Each one of the 4 operations is what we will call an expression. Expressions are the next level of programming building blocks, and represents the smallest unit we can write of something that can be executed: a mathematical operator describes what to do, but without operands there is nothing to do so far. All the 4 examples present one operator and two operands.</p>
-<a class="header" href="print.html#where-can-i-find-my-results-variables" id="where-can-i-find-my-results-variables"><h3>Where can I find my results? Variables.</h3></a>
+<p>Notice how similar are the notations in the 4 chosen languages. This is mostly because all four languages belong to the same family of imperative languages,
+here is most usual to find the infix notation.</p>
+<p>Each one of the 4 operations is what we will call an expression. Expressions are the next level of programming building blocks, and represents the smallest
+unit we can write of something that can be executed: a mathematical operator describes what to do, but without operands there is nothing to do so far. All the 4
+examples present one operator and two operands.</p>
+<a class="header" href="print.html#where-can-i-find-my-results-variables" id="where-can-i-find-my-results-variables"><h2>Where can I find my results? Variables.</h2></a>
 <p>I know that 1 plus 2 is 3, I do not really need a computer program to calculate that, so what is the point?</p>
 <p>The result of an operation can be stored, so we can use it later on. From the cooking point of view this means that will get two ingredients and combine into something: I mix coffee with milk and from now on I will call it cafe late, then I pour the beverage into a cup. The cup becomes the vessel of the result of my operation (the mix) and from this point on, if I need to do anything else with the beverage I will just use the cup: instead of delivering the cafe late to the client, I will just hand over the cup.</p>
 <table><thead><tr><th> no cup        </th><th align="center"> Python (no variables):  </th></tr></thead><tbody>
@@ -189,7 +196,7 @@ true &amp;&amp; true
 80 * x;
 </code></pre>
 <p>Notice the int word? This introduces us to the typing of expressions.</p>
-<a class="header" href="print.html#first-headache-types" id="first-headache-types"><h3>First headache, Types.</h3></a>
+<a class="header" href="print.html#first-headache-types" id="first-headache-types"><h2>First headache, Types.</h2></a>
 <p>No matter what you hear, every programming language is typed. The type concept is common to every language and it is there to help you out (although you might sometimes thing the opposite).</p>
 <p>The kitchen can be sorted out as well along categories of tools, foods and crew members. For example: we have fruts (oranges, apples, bananas...) and we have meat (veal, pork, lamb...). When cooking a given main dish recipe, we are meant to use some kind of meat. But if instead of meat we use some fruit, then the results will be un-orthodox, leading us to a new horizon of gastronomic success or a weekend of stomachache.</p>
 <p>The problem is that we did not mean the recipe to be used with fruits, and therefore results would be unexpected. In order to guarantee success with the recipe we will annotate the kind of food we want to use. Whenever to apply the restrictions or be more relaxed, depends on the cook.</p>
@@ -210,6 +217,7 @@ int c = 1.0 + a  // c is an Integer container
 <p>Every expression in any language has a type. Just like cooking: some broth and toppings of any kind makes a soup while some sweet dough with some icing makes a cake. Whenever you serve the cake in a pan, dish or chopping board depends on how picky the cook is.</p>
 <p>Languages can be more or less type sensitive: the big picture here is that some languages like JavaScript or Python are able to infer the type of a given variable from the expression we use to initialize it, and other languages force us to write up front what kind of content this container is going to hold.</p>
 <p>A word of warning: serving soup on a flat dish may turn in disaster, having appointed in the recipe to use a bowl may make life easier on the long cooks. I have experienced that strongly typed languages are more robust as the project grows, while dynamic typing is much faster (to develop and test) in the early prototyping phases. You may choose your weapon depending on the scope and resources available.</p>
+<a class="header" href="print.html#control-flow" id="control-flow"><h2>Control Flow</h2></a>
 <a class="header" href="print.html#write-down-the-steps-and-follow--them-one-at-the-time" id="write-down-the-steps-and-follow--them-one-at-the-time"><h3>Write down the steps, and follow  them one at the time.</h3></a>
 <p>So far we have learned how to execute arithmetic operations and somehow tailor them into an arbitrary complex equation. This could be pretty useful but so far we are very little flexible regarding options, repetitions and unexpected scenarios.</p>
 <p>Let's draft a new recipe:</p>
@@ -238,11 +246,21 @@ a = 1
 a = a + 1 + 12 + a * 3
 a + 1
 </code></pre>
-<p>Every expression is an statement on its own, no matter how complex turns to be. The end is marked by an end of statement token, which in case of C, C++, Java, JavaScript, Rust and others is a semi-colon ( ; ) character, while other languages like Python use the end of line. The end of line is an invisible character that text software use to mark where a line ends and a new one begins. In other words, In Python we write one statement per line while in the _C, C++, Java, Javascript and Rust _we are allowed to write more than one (still though I may have something to say about this in the style section).</p>
+<p>Every expression is an statement on its own, no matter how complex turns to be. The end is marked by an end of statement token, which in case of C, C++, Java, JavaScript, Rust and others is a semi-colon ( <em>;</em> ) character, while other languages like Python use the end of line. The end of line is an invisible character that text software use to mark where a line ends and a new one begins. In other words, In Python we write one statement per line while in the _C, C++, Java, Javascript and Rust _we are allowed to write more than one (still though I may have something to say about this in the style section).</p>
+<p>Statements can be grouped into sequences, which will help us to better organize ourselves. Languages like C, C++, Java, JavaScript, Rust... join statements in a group by listing them between curly braces ( <em>{</em> and <em>}</em> ). On the other hand, Python uses the indentation as groping mechanism, which is somehow controversial by easy to adopt. Nevertheless we will talk about this issue later on.</p>
+<a class="header" href="print.html#rust" id="rust"><h4>Rust</h4></a>
+<pre><pre class="playpen"><code class="language-rust"># #![allow(unused_variables)]
+#fn main() {
+{ 
+    let x = 1;
+    x + 1;
+}
+
+#}</code></pre></pre>
 <a class="header" href="print.html#i-do-what-i-want-control-flow" id="i-do-what-i-want-control-flow"><h3>I do what I want. Control flow.</h3></a>
 <p>Now that we are able to describe steps, is time to address the second and main new issue in the current recipe:</p>
 <p><em>&quot;Cook for 25-30 mins. Depending on size. Check till skin becomes wrinkled&quot;</em></p>
-<p>How can we do this? so far we are only able to execute one operation after another. To be able to break a series of statements and switch to other series of statements we need a common feature of imperative languages: control flow.</p>
+<p>How can we do this? So far we are only able to execute one operation after another. To be able to break a series of statements and switch to other series of statements we need a common feature of imperative languages: control flow.</p>
 <p>Our cook is cooking following the instructions and begins to cook the potatoes in the oven.</p>
 <ol>
 <li>He opens the oven and lays the potatoes inside.</li>
@@ -260,9 +278,21 @@ a + 1
 </ul>
 <p>A forking condition enables one path of steps or another depending on a given decision:</p>
 <p><em>&quot;If the potatoes big, cut them in 4 pieces, otherwise, cut them in half.&quot;</em></p>
-<p>This condition will prepare the cook to handle two possible scenarios. Although we do not know what kind of potatoes he may find in the kitchen, our recipe is ready.</p>
-<p>### The first and only tool to write less: Functions.</p>
-<a class="header" href="print.html#enough-ready-to-write-the-first-program" id="enough-ready-to-write-the-first-program"><h3>Enough! Ready to write the first program.</h3></a>
+<p>This condition will prepare the cook to handle two possible scenarios. Although we do not know what kind of potatoes he may find in the kitchen, our recipe is ready. With conditions we can prepare the program to evaluate the situation and act.</p>
+<a class="header" href="print.html#calculate-the-absolute-value-of-an-integer-number" id="calculate-the-absolute-value-of-an-integer-number"><h4>Calculate the absolute value of an Integer number:</h4></a>
+<a class="header" href="print.html#the-first-and-only-tool-to-write-less-functions" id="the-first-and-only-tool-to-write-less-functions"><h2>The first and only tool to write less: Functions.</h2></a>
+<p>When cooking, there are some steps which can be described once and then used more than one time. For example: <em>chopping vegetables</em>.</p>
+<a class="header" href="print.html#how-to-chop-vegetables" id="how-to-chop-vegetables"><h4>How to chop vegetables:</h4></a>
+<ol>
+<li>Get a knife.</li>
+<li>Get a Copping board.</li>
+<li>Choose an end of the vegetable and put the sharp side of the knife in contact with it.</li>
+<li>Move the knife edge 1/4 of an inch closer to the remaining vegetable.</li>
+<li>Apply pressure in the knife until a slice is created.</li>
+<li>If the remaining vegetable is larger than 1/4 of an inch repeat from 4. Otherwise continue.</li>
+<li>Clean the knife and the chopping board.</li>
+</ol>
+<a class="header" href="print.html#enough-ready-to-write-the-first-program" id="enough-ready-to-write-the-first-program"><h2>Enough! Ready to write the first program.</h2></a>
 
                 </div>
 

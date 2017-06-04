@@ -1,4 +1,5 @@
 # Let's "write" some "program"
+
 Programming automatizes the way we solve a problem by describing this procedure and writing the description of steps in a certain language. This procedure is
 called algorithm, and identifying it is one of the most time consuming tasks a programmer deals with.
 

@@ -25,5 +25,5 @@ script:
 
     # deploy tool
     - pip install doctr
-    - doctr deploy
+    - doctr deploy docs
 
