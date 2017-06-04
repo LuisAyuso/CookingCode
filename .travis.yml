@@ -1,9 +1,9 @@
 # doctr requires python >=3.5
-language: python; rust
+language: python rust
 python:
     - 3.6
 rust:
-    - 1.19
+    - stable
 
 sudo: false
 # This gives doctr the key we've generated
