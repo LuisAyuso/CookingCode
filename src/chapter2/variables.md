@@ -18,7 +18,7 @@ Notice that by using a cup, we are able to serve any kind of brewage to our cust
 
 Variables are the way we have to store the result of computations (during program live time) and have many interesting properties (most of them common to many computer languages), although exact details on how variables work and what can you do with them are specific to the language you are learning, please check your documentation before doing assumptions.
 
-And.. How would this look like in any of the other languages:
+And... How would this look like in any of the other languages?
 
 #### C
 ```C

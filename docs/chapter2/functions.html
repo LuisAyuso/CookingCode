@@ -69,8 +69,8 @@
 
                 <div id="content" class="content">
                     <a class="header" href="./chapter2/functions.html#the-first-and-only-tool-to-write-less-functions" id="the-first-and-only-tool-to-write-less-functions"><h2>The first and only tool to write less: Functions.</h2></a>
-<p>When cooking, there are some steps which can be described once and then used more than one time. For example: <em>chopping vegetables</em>.</p>
-<a class="header" href="./chapter2/functions.html#how-to-chop-vegetables" id="how-to-chop-vegetables"><h4>How to chop vegetables:</h4></a>
+<p>When cooking, there are some steps which can be described once and then used more than one time. For example: <em>cutting vegetables</em>.</p>
+<a class="header" href="./chapter2/functions.html#how-to-cut-vegetables" id="how-to-cut-vegetables"><h4>How to cut vegetables:</h4></a>
 <ol>
 <li>Get a knife.</li>
 <li>Get a Copping board.</li>
@@ -80,6 +80,43 @@
 <li>If the remaining vegetable is larger than 1/4 of an inch repeat from 4. Otherwise continue.</li>
 <li>Clean the knife and the chopping board.</li>
 </ol>
+<p>I guess no one will ever describe this process like I just did; probably using knifes in an inherent skill of the human kind. Nevertheless, this example serves us to illustrate the idea:</p>
+<p>Whenever I would like to cut a carrot, pepper, or any other vegetable, I will just follow the steps described before.It does not matter what actual veggie do I need for my current recipe, and following the steps will most probably work out.</p>
+<p>In a more orthodox way of phrasing it: Cutting a veggie is a function which accepts a veggie as parameter and the result is a group of slices. In a recipe you may find one instruction which states: <em>cut the carrots</em>. In our programming  languages world, this means to apply the function <em>cut</em> to the value <em>carrot</em> of type <em>veggie</em>.</p>
+<p>When describing a function, there are 3 steps to keep in mind.</p>
+<ul>
+<li>The call: When we use the function, we execute the steps it describes with an input.</li>
+<li>The prototype: This &quot;thing&quot; describes how your function is named, what do we need to execute it and what will be the result.</li>
+<li>The definition: The list of steps which tells us what to do.</li>
+</ul>
+<a class="header" href="./chapter2/functions.html#the-call" id="the-call"><h4>The call</h4></a>
+<p>To use the code packed in a function, we just need to apply it to a given input.</p>
+<table><thead><tr><th align="center"> In the Kitchen  </th><th align="center"> Python </th><th align="center"> C </th></tr></thead><tbody>
+<tr><td align="center"> cut a carrot    </td><td align="center"> <code>abs(1)</code> </td><td align="center"> <code>abs(1)</code> </td></tr>
+<tr><td align="center"> cut a pepper    </td><td align="center"> <code>abs(2)</code> </td><td align="center"><code>abs(2)</code> </td></tr>
+<tr><td align="center"> mix coffee and milk </td><td align="center"> <code>sum(1, 2)</code> </td><td align="center"> <code>sum(1, 2)</code> </td></tr>
+<tr><td align="center"> mix soup and cream  </td><td align="center"> <code>sum(1.0, -1)</code> </td><td align="center"> <code>sum(1.0, -1)</code> </td></tr>
+</tbody></table>
+<p>Although using the function seems pretty similar in every language, the differences come when we want to describe their behavior.</p>
+<a class="header" href="./chapter2/functions.html#prototype" id="prototype"><h4>Prototype</h4></a>
+<p>A very important part of a function is to give it a name, so people know what you mean by using it. When cooking, there are many <em>functions</em> available to you. You can <em>boil</em>, <em>fry</em>, <em>bake</em>, or <em>grill</em>; each of them manage to cook your food by applying heat, some other side effects may appear though.</p>
+<p>A cook knows a <em>repertoire</em> of functions: like how to <em>boil</em> meat, or <em>fry</em> fish; in this way, when he writes a recipe he my skip the tedious task of explaining truisms. At the same time, the cook may want to separate the description of how to prepare the sauce from the main dish list of steps. This side story will be acknowledged in the recipe with one steps stating: <em>now you can cook the sauce</em>. By doing so we can reduce the level of detail needed, and make our recipe easier to read.</p>
+<p>After the name, a list of requirements is always needed. This list will describe what needs to be provided to get the job done. In the case of <em>pealing a vegetable</em> it will be a veggie, which later on can be any kind of actual veggie: like a carrot or a potatoe. In the case of <em>mixing two liquids</em>: we will need two liquids, which can be coffee and milk, gin and tonic, or even beer and Cocacola (barbaric).</p>
+<p>To finalize the prototype, we will note what is it that our operation will create: we put together some ingredients t  make a cake, or a sauce, or a soup...</p>
+<p>Puting together the three parts: We have the title of our little recipe:</p>
+<p><em>To boil veggies</em></p>
+<ul>
+<li>We will need some vegetable.</li>
+<li>We will get a boiled vegetable.</li>
+</ul>
+<p>The following examples show the prototypes for the absolute value funcion:</p>
+<table><thead><tr><th> C++ </th><th> Rust </th><th> Python </th></tr></thead><tbody>
+<tr><td align="center"> <code>int abs(inti value)</code> </td><td align="center"> <code>fn abs(value: i32) -&gt; i32</code> </td><td align="center"> <code>def abs(value):</code> </td></tr>
+</tbody></table>
+<p>Notice that python does not state what kind of value the function returns. Dynamic typing languages do not need this as they constattly addapt to the current context, as work like some kind of teenager kid who addresses everything by <em>stuff</em>. This does not mean that functions do not have a return type, it means that functions allways return some stuff, and then you can put it on a stuff container and make some other thing with this stuff.</p>
+<a class="header" href="./chapter2/functions.html#tweak-a-function" id="tweak-a-function"><h3>Tweak a function</h3></a>
+<a class="header" href="./chapter2/functions.html#parameters" id="parameters"><h4>Parameters:</h4></a>
+<p>In case I move to live to the other side of the world</p>
 
                 </div>
 

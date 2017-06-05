@@ -68,9 +68,11 @@
                 </div>
 
                 <div id="content" class="content">
-                    <p>This is a book about programming in the most general way. Sometimes members of my family or close friends ask me to teach them how to program; the reasons why they want to learn remain obscure to me, but I can see that they value the skills set I have develop.
+                    <a class="header" href="print.html#cooking-code" id="cooking-code"><h1>Cooking Code</h1></a>
+<p><em>by Luis Ayuso</em></p>
+<p>This is a book about programming in the most general way. Sometimes members of my family or close friends ask me to teach them how to program; the reasons why they want to learn remain obscure to me, but I can see that they value the skills set I have develop.
 This skill set does not only let me understand this new world we live in, but it allows me to like and enjoy technology.</p>
-<p>Is my intention with this book to ilustrate the mental process of programming, as if a caricature were. With this I hope you may be entretained as I try to describe the intrinsics of writing a computer program.</p>
+<p>Is my intention with this book to illustrate the mental process of programming, as if a caricature were. With this I hope you may be entertained as I try to describe the intrinsics of writing a computer program.</p>
 <a class="header" href="print.html#introduction" id="introduction"><h1>Introduction</h1></a>
 <p>This manuscript pretends to be language agnostic, and to enforce that, several different languages will be used to illustrate concepts. Far from confusing you, this is meant to highlight the most important tools that need to be considered. Then, learning the specific details of any given technology is just a matter of typing the right questions in your favorite search engine.</p>
 <a class="header" href="print.html#why-cooking" id="why-cooking"><h2>Why cooking?</h2></a>
@@ -190,7 +192,7 @@ examples present one operator and two operands.</p>
 </tbody></table>
 <p>Notice that by using a cup, we are able to serve any kind of brewage to our customers. In the same manner, if we do not use variables in a program (although we can write a pretty big program), we would never be able to compute a different values; since we will write every operand as an specific value.</p>
 <p>Variables are the way we have to store the result of computations (during program live time) and have many interesting properties (most of them common to many computer languages), although exact details on how variables work and what can you do with them are specific to the language you are learning, please check your documentation before doing assumptions.</p>
-<p>And.. How would this look like in any of the other languages:</p>
+<p>And... How would this look like in any of the other languages?</p>
 <a class="header" href="print.html#c" id="c"><h4>C</h4></a>
 <pre><code class="language-C">int x = 1 + 2;
 80 * x;
@@ -218,7 +220,7 @@ int c = 1.0 + a  // c is an Integer container
 <p>Languages can be more or less type sensitive: the big picture here is that some languages like JavaScript or Python are able to infer the type of a given variable from the expression we use to initialize it, and other languages force us to write up front what kind of content this container is going to hold.</p>
 <p>A word of warning: serving soup on a flat dish may turn in disaster, having appointed in the recipe to use a bowl may make life easier on the long cooks. I have experienced that strongly typed languages are more robust as the project grows, while dynamic typing is much faster (to develop and test) in the early prototyping phases. You may choose your weapon depending on the scope and resources available.</p>
 <a class="header" href="print.html#control-flow" id="control-flow"><h2>Control Flow</h2></a>
-<a class="header" href="print.html#write-down-the-steps-and-follow--them-one-at-the-time" id="write-down-the-steps-and-follow--them-one-at-the-time"><h3>Write down the steps, and follow  them one at the time.</h3></a>
+<a class="header" href="print.html#write-down-the-steps-then-follow-them-one-at-the-time" id="write-down-the-steps-then-follow-them-one-at-the-time"><h3>Write down the steps, then follow them one at the time.</h3></a>
 <p>So far we have learned how to execute arithmetic operations and somehow tailor them into an arbitrary complex equation. This could be pretty useful but so far we are very little flexible regarding options, repetitions and unexpected scenarios.</p>
 <p>Let's draft a new recipe:</p>
 <a class="header" href="print.html#how-to-cook-potatoes" id="how-to-cook-potatoes"><h4>How to cook potatoes:</h4></a>
@@ -233,7 +235,7 @@ int c = 1.0 + a  // c is an Integer container
 <p>First of all, I would like to acknowledge the steps enumeration. Those steps provide a temporal hint to us, and settles an order which will lead to success. Nevertheless is not the only order we can follow, as we can start heating up the oven as step 2, and then cut and salt the potatoes any time between 2 and 5. The rule of thumb here is to write something that can do the job, and we will optimize and improve the code once it is working.</p>
 <p>Although we will not pay much attention to the order variations, it is important to notice the steps as individual steps. It does not matter if we can heat up the oven while we cut the potatoes. Those are two separated steps and we will try to avoid interference, otherwise we will end up turning the oven on while we hold a potato in one hand and a knife in the other.</p>
 <p>In the same fashion, the code is separated in independent and self contained steps which allow us to reason about the whole procedure. These steps are the next level in programming building blocks and are called statements.</p>
-<p>Each programming language may have a different definition of statements, but (once again) imperative languages share most of the features:</p>
+<p>Each programming language may have a different definition of statements, but (once again) imperative languages share most of their features:</p>
 <a class="header" href="print.html#c-c-java" id="c-c-java"><h4>C, C++, Java</h4></a>
 <pre><code class="language-C">int a = 1;
 // this is one line comment
@@ -273,16 +275,28 @@ a + 1
 <p>Step 5 is slightly more complicated than other steps we have seen before. This is because it is a conditional statement.</p>
 <p>There are many flavors in conditional statements and some languages may provide even more, nevertheless there are only 2 significant groups:</p>
 <ul>
-<li>Forking conditions.</li>
-<li>Loop conditions.</li>
+<li>Forking conditions let us choose between options, depending on the condition.</li>
+<li>Loop conditions let us repeat a serie of steps, depending on the condition.</li>
 </ul>
+<a class="header" href="print.html#forking-conditions" id="forking-conditions"><h4>Forking Conditions</h4></a>
 <p>A forking condition enables one path of steps or another depending on a given decision:</p>
-<p><em>&quot;If the potatoes big, cut them in 4 pieces, otherwise, cut them in half.&quot;</em></p>
+<p><em>&quot;If the potatoes are big: cut them in 4 pieces. Otherwise, cut them in half.&quot;</em></p>
 <p>This condition will prepare the cook to handle two possible scenarios. Although we do not know what kind of potatoes he may find in the kitchen, our recipe is ready. With conditions we can prepare the program to evaluate the situation and act.</p>
-<a class="header" href="print.html#calculate-the-absolute-value-of-an-integer-number" id="calculate-the-absolute-value-of-an-integer-number"><h4>Calculate the absolute value of an Integer number:</h4></a>
+<a class="header" href="print.html#calculate-the-absolute-value-of-an-integer-number" id="calculate-the-absolute-value-of-an-integer-number"><h5>Calculate the absolute value of an Integer number:</h5></a>
+<p>The absolute value of an integer value is the value of the digits without the sign. This means that the absolute value of 1 is 1 while the absolute valute of -1 is 1.</p>
+<pre><code class="language-C++">if (x &gt; 0)
+{
+    x = x
+}
+else
+{
+   x = -x;
+} 
+</code></pre>
+<a class="header" href="print.html#loop-conditions" id="loop-conditions"><h4>Loop Conditions</h4></a>
 <a class="header" href="print.html#the-first-and-only-tool-to-write-less-functions" id="the-first-and-only-tool-to-write-less-functions"><h2>The first and only tool to write less: Functions.</h2></a>
-<p>When cooking, there are some steps which can be described once and then used more than one time. For example: <em>chopping vegetables</em>.</p>
-<a class="header" href="print.html#how-to-chop-vegetables" id="how-to-chop-vegetables"><h4>How to chop vegetables:</h4></a>
+<p>When cooking, there are some steps which can be described once and then used more than one time. For example: <em>cutting vegetables</em>.</p>
+<a class="header" href="print.html#how-to-cut-vegetables" id="how-to-cut-vegetables"><h4>How to cut vegetables:</h4></a>
 <ol>
 <li>Get a knife.</li>
 <li>Get a Copping board.</li>
@@ -292,6 +306,43 @@ a + 1
 <li>If the remaining vegetable is larger than 1/4 of an inch repeat from 4. Otherwise continue.</li>
 <li>Clean the knife and the chopping board.</li>
 </ol>
+<p>I guess no one will ever describe this process like I just did; probably using knifes in an inherent skill of the human kind. Nevertheless, this example serves us to illustrate the idea:</p>
+<p>Whenever I would like to cut a carrot, pepper, or any other vegetable, I will just follow the steps described before.It does not matter what actual veggie do I need for my current recipe, and following the steps will most probably work out.</p>
+<p>In a more orthodox way of phrasing it: Cutting a veggie is a function which accepts a veggie as parameter and the result is a group of slices. In a recipe you may find one instruction which states: <em>cut the carrots</em>. In our programming  languages world, this means to apply the function <em>cut</em> to the value <em>carrot</em> of type <em>veggie</em>.</p>
+<p>When describing a function, there are 3 steps to keep in mind.</p>
+<ul>
+<li>The call: When we use the function, we execute the steps it describes with an input.</li>
+<li>The prototype: This &quot;thing&quot; describes how your function is named, what do we need to execute it and what will be the result.</li>
+<li>The definition: The list of steps which tells us what to do.</li>
+</ul>
+<a class="header" href="print.html#the-call" id="the-call"><h4>The call</h4></a>
+<p>To use the code packed in a function, we just need to apply it to a given input.</p>
+<table><thead><tr><th align="center"> In the Kitchen  </th><th align="center"> Python </th><th align="center"> C </th></tr></thead><tbody>
+<tr><td align="center"> cut a carrot    </td><td align="center"> <code>abs(1)</code> </td><td align="center"> <code>abs(1)</code> </td></tr>
+<tr><td align="center"> cut a pepper    </td><td align="center"> <code>abs(2)</code> </td><td align="center"><code>abs(2)</code> </td></tr>
+<tr><td align="center"> mix coffee and milk </td><td align="center"> <code>sum(1, 2)</code> </td><td align="center"> <code>sum(1, 2)</code> </td></tr>
+<tr><td align="center"> mix soup and cream  </td><td align="center"> <code>sum(1.0, -1)</code> </td><td align="center"> <code>sum(1.0, -1)</code> </td></tr>
+</tbody></table>
+<p>Although using the function seems pretty similar in every language, the differences come when we want to describe their behavior.</p>
+<a class="header" href="print.html#prototype" id="prototype"><h4>Prototype</h4></a>
+<p>A very important part of a function is to give it a name, so people know what you mean by using it. When cooking, there are many <em>functions</em> available to you. You can <em>boil</em>, <em>fry</em>, <em>bake</em>, or <em>grill</em>; each of them manage to cook your food by applying heat, some other side effects may appear though.</p>
+<p>A cook knows a <em>repertoire</em> of functions: like how to <em>boil</em> meat, or <em>fry</em> fish; in this way, when he writes a recipe he my skip the tedious task of explaining truisms. At the same time, the cook may want to separate the description of how to prepare the sauce from the main dish list of steps. This side story will be acknowledged in the recipe with one steps stating: <em>now you can cook the sauce</em>. By doing so we can reduce the level of detail needed, and make our recipe easier to read.</p>
+<p>After the name, a list of requirements is always needed. This list will describe what needs to be provided to get the job done. In the case of <em>pealing a vegetable</em> it will be a veggie, which later on can be any kind of actual veggie: like a carrot or a potatoe. In the case of <em>mixing two liquids</em>: we will need two liquids, which can be coffee and milk, gin and tonic, or even beer and Cocacola (barbaric).</p>
+<p>To finalize the prototype, we will note what is it that our operation will create: we put together some ingredients t  make a cake, or a sauce, or a soup...</p>
+<p>Puting together the three parts: We have the title of our little recipe:</p>
+<p><em>To boil veggies</em></p>
+<ul>
+<li>We will need some vegetable.</li>
+<li>We will get a boiled vegetable.</li>
+</ul>
+<p>The following examples show the prototypes for the absolute value funcion:</p>
+<table><thead><tr><th> C++ </th><th> Rust </th><th> Python </th></tr></thead><tbody>
+<tr><td align="center"> <code>int abs(inti value)</code> </td><td align="center"> <code>fn abs(value: i32) -&gt; i32</code> </td><td align="center"> <code>def abs(value):</code> </td></tr>
+</tbody></table>
+<p>Notice that python does not state what kind of value the function returns. Dynamic typing languages do not need this as they constattly addapt to the current context, as work like some kind of teenager kid who addresses everything by <em>stuff</em>. This does not mean that functions do not have a return type, it means that functions allways return some stuff, and then you can put it on a stuff container and make some other thing with this stuff.</p>
+<a class="header" href="print.html#tweak-a-function" id="tweak-a-function"><h3>Tweak a function</h3></a>
+<a class="header" href="print.html#parameters" id="parameters"><h4>Parameters:</h4></a>
+<p>In case I move to live to the other side of the world</p>
 <a class="header" href="print.html#enough-ready-to-write-the-first-program" id="enough-ready-to-write-the-first-program"><h2>Enough! Ready to write the first program.</h2></a>
 
                 </div>

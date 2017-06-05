@@ -69,7 +69,7 @@
 
                 <div id="content" class="content">
                     <a class="header" href="./chapter2/flow.html#control-flow" id="control-flow"><h2>Control Flow</h2></a>
-<a class="header" href="./chapter2/flow.html#write-down-the-steps-and-follow--them-one-at-the-time" id="write-down-the-steps-and-follow--them-one-at-the-time"><h3>Write down the steps, and follow  them one at the time.</h3></a>
+<a class="header" href="./chapter2/flow.html#write-down-the-steps-then-follow-them-one-at-the-time" id="write-down-the-steps-then-follow-them-one-at-the-time"><h3>Write down the steps, then follow them one at the time.</h3></a>
 <p>So far we have learned how to execute arithmetic operations and somehow tailor them into an arbitrary complex equation. This could be pretty useful but so far we are very little flexible regarding options, repetitions and unexpected scenarios.</p>
 <p>Let's draft a new recipe:</p>
 <a class="header" href="./chapter2/flow.html#how-to-cook-potatoes" id="how-to-cook-potatoes"><h4>How to cook potatoes:</h4></a>
@@ -84,7 +84,7 @@
 <p>First of all, I would like to acknowledge the steps enumeration. Those steps provide a temporal hint to us, and settles an order which will lead to success. Nevertheless is not the only order we can follow, as we can start heating up the oven as step 2, and then cut and salt the potatoes any time between 2 and 5. The rule of thumb here is to write something that can do the job, and we will optimize and improve the code once it is working.</p>
 <p>Although we will not pay much attention to the order variations, it is important to notice the steps as individual steps. It does not matter if we can heat up the oven while we cut the potatoes. Those are two separated steps and we will try to avoid interference, otherwise we will end up turning the oven on while we hold a potato in one hand and a knife in the other.</p>
 <p>In the same fashion, the code is separated in independent and self contained steps which allow us to reason about the whole procedure. These steps are the next level in programming building blocks and are called statements.</p>
-<p>Each programming language may have a different definition of statements, but (once again) imperative languages share most of the features:</p>
+<p>Each programming language may have a different definition of statements, but (once again) imperative languages share most of their features:</p>
 <a class="header" href="./chapter2/flow.html#c-c-java" id="c-c-java"><h4>C, C++, Java</h4></a>
 <pre><code class="language-C">int a = 1;
 // this is one line comment
@@ -124,13 +124,25 @@ a + 1
 <p>Step 5 is slightly more complicated than other steps we have seen before. This is because it is a conditional statement.</p>
 <p>There are many flavors in conditional statements and some languages may provide even more, nevertheless there are only 2 significant groups:</p>
 <ul>
-<li>Forking conditions.</li>
-<li>Loop conditions.</li>
+<li>Forking conditions let us choose between options, depending on the condition.</li>
+<li>Loop conditions let us repeat a serie of steps, depending on the condition.</li>
 </ul>
+<a class="header" href="./chapter2/flow.html#forking-conditions" id="forking-conditions"><h4>Forking Conditions</h4></a>
 <p>A forking condition enables one path of steps or another depending on a given decision:</p>
-<p><em>&quot;If the potatoes big, cut them in 4 pieces, otherwise, cut them in half.&quot;</em></p>
+<p><em>&quot;If the potatoes are big: cut them in 4 pieces. Otherwise, cut them in half.&quot;</em></p>
 <p>This condition will prepare the cook to handle two possible scenarios. Although we do not know what kind of potatoes he may find in the kitchen, our recipe is ready. With conditions we can prepare the program to evaluate the situation and act.</p>
-<a class="header" href="./chapter2/flow.html#calculate-the-absolute-value-of-an-integer-number" id="calculate-the-absolute-value-of-an-integer-number"><h4>Calculate the absolute value of an Integer number:</h4></a>
+<a class="header" href="./chapter2/flow.html#calculate-the-absolute-value-of-an-integer-number" id="calculate-the-absolute-value-of-an-integer-number"><h5>Calculate the absolute value of an Integer number:</h5></a>
+<p>The absolute value of an integer value is the value of the digits without the sign. This means that the absolute value of 1 is 1 while the absolute valute of -1 is 1.</p>
+<pre><code class="language-C++">if (x &gt; 0)
+{
+    x = x
+}
+else
+{
+   x = -x;
+} 
+</code></pre>
+<a class="header" href="./chapter2/flow.html#loop-conditions" id="loop-conditions"><h4>Loop Conditions</h4></a>
 
                 </div>
 

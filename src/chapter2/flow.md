@@ -1,6 +1,6 @@
 ## Control Flow
 
-### Write down the steps, and follow  them one at the time.  
+### Write down the steps, then follow them one at the time.  
 
 So far we have learned how to execute arithmetic operations and somehow tailor them into an arbitrary complex equation. This could be pretty useful but so far we are very little flexible regarding options, repetitions and unexpected scenarios.
 
@@ -21,7 +21,7 @@ Although we will not pay much attention to the order variations, it is important
 
 In the same fashion, the code is separated in independent and self contained steps which allow us to reason about the whole procedure. These steps are the next level in programming building blocks and are called statements.
 
-Each programming language may have a different definition of statements, but (once again) imperative languages share most of the features:
+Each programming language may have a different definition of statements, but (once again) imperative languages share most of their features:
 
 #### C, C++, Java
 ```C
@@ -70,18 +70,20 @@ Step 5 is slightly more complicated than other steps we have seen before. This i
 
 There are many flavors in conditional statements and some languages may provide even more, nevertheless there are only 2 significant groups:
 
-- Forking conditions.
-- Loop conditions.
+- Forking conditions let us choose between options, depending on the condition.
+- Loop conditions let us repeat a serie of steps, depending on the condition.
+
+#### Forking Conditions
 
 A forking condition enables one path of steps or another depending on a given decision:
 
-_"If the potatoes are big, cut them in 4 pieces, otherwise, cut them in half."_
+_"If the potatoes are big: cut them in 4 pieces. Otherwise, cut them in half."_
 
 This condition will prepare the cook to handle two possible scenarios. Although we do not know what kind of potatoes he may find in the kitchen, our recipe is ready. With conditions we can prepare the program to evaluate the situation and act. 
 
-#### Calculate the absolute value of an Integer number:
+##### Calculate the absolute value of an Integer number:
 
-The absolute value of an integer value is the value of the digits without the sign. This means that the absolute value of 1 is 1 while the absolute valu of -1 is 1.
+The absolute value of an integer value is the value of the digits without the sign. This means that the absolute value of 1 is 1 while the absolute valute of -1 is 1.
 
 ``` C++
 if (x > 0)
@@ -93,3 +95,5 @@ else
    x = -x;
 } 
 ```
+
+#### Loop Conditions
