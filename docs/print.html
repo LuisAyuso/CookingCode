@@ -249,7 +249,7 @@ a = a + 1 + 12 + a * 3
 a + 1
 </code></pre>
 <p>Every expression is an statement on its own, no matter how complex turns to be. The end is marked by an end of statement token, which in case of C, C++, Java, JavaScript, Rust and others is a semi-colon ( <em>;</em> ) character, while other languages like Python use the end of line. The end of line is an invisible character that text software use to mark where a line ends and a new one begins. In other words, In Python we write one statement per line while in the _C, C++, Java, Javascript and Rust _we are allowed to write more than one (still though I may have something to say about this in the style section).</p>
-<p>Statements can be grouped into sequences, which will help us to better organize ourselves. Languages like C, C++, Java, JavaScript, Rust... join statements in a group by listing them between curly braces ( <em>{</em> and <em>}</em> ). On the other hand, Python uses the indentation as groping mechanism, which is somehow controversial by easy to adopt. Nevertheless we will talk about this issue later on.</p>
+<p>Statements can be grouped into sequences, which will help us to better organize ourselves. Languages like C, C++, Java, JavaScript, or Rust group statements by listing them between curly braces ( <em>{</em> and <em>}</em> ). On the other hand, Python uses the indentation as groping mechanism, which is somehow controversial by easy to adopt. Nevertheless we will talk about this issue later on.</p>
 <a class="header" href="print.html#rust" id="rust"><h4>Rust</h4></a>
 <pre><pre class="playpen"><code class="language-rust"># #![allow(unused_variables)]
 #fn main() {
@@ -276,15 +276,16 @@ a + 1
 <p>There are many flavors in conditional statements and some languages may provide even more, nevertheless there are only 2 significant groups:</p>
 <ul>
 <li>Forking conditions let us choose between options, depending on the condition.</li>
-<li>Loop conditions let us repeat a serie of steps, depending on the condition.</li>
+<li>Loop conditions let us repeat a series of steps, depending on the condition.</li>
 </ul>
 <a class="header" href="print.html#forking-conditions" id="forking-conditions"><h4>Forking Conditions</h4></a>
 <p>A forking condition enables one path of steps or another depending on a given decision:</p>
 <p><em>&quot;If the potatoes are big: cut them in 4 pieces. Otherwise, cut them in half.&quot;</em></p>
 <p>This condition will prepare the cook to handle two possible scenarios. Although we do not know what kind of potatoes he may find in the kitchen, our recipe is ready. With conditions we can prepare the program to evaluate the situation and act.</p>
-<a class="header" href="print.html#calculate-the-absolute-value-of-an-integer-number" id="calculate-the-absolute-value-of-an-integer-number"><h5>Calculate the absolute value of an Integer number:</h5></a>
-<p>The absolute value of an integer value is the value of the digits without the sign. This means that the absolute value of 1 is 1 while the absolute valute of -1 is 1.</p>
-<pre><code class="language-C++">if (x &gt; 0)
+<a class="header" href="print.html#calculate-the-absolute-value-of-an-integer-number" id="calculate-the-absolute-value-of-an-integer-number"><h4>Calculate the absolute value of an Integer number:</h4></a>
+<p>The absolute value of an integer value is the value of the digits without the sign. This means that the absolute value of 1 is 1 while the absolute value of -1 is 1.</p>
+<a class="header" href="print.html#c-2" id="c-2"><h4>C</h4></a>
+<pre><code class="language-C">if (x &gt; 0)
 {
     x = x
 }
@@ -293,7 +294,211 @@ else
    x = -x;
 } 
 </code></pre>
-<a class="header" href="print.html#loop-conditions" id="loop-conditions"><h4>Loop Conditions</h4></a>
+<a class="header" href="print.html#python-3" id="python-3"><h4>Python</h4></a>
+<pre><code class="language-Python">if x &gt; 0:
+    x = x
+else:
+    x = -x
+</code></pre>
+<p>Branching conditions drive our code execution and are our first tool to write generic programs: A generic program will let us solve a problem where the input may be different from one execution to another. In other words, branching makes our programs useful.</p>
+<p>There is a second kind of branch which is worth mention because it is implemented in most of imperative languages. The multiple branching condition:</p>
+<a class="header" href="print.html#multiple-branch-select-an-option" id="multiple-branch-select-an-option"><h4>Multiple Branch: select an option</h4></a>
+<p>Let's consider the following recipe:</p>
+<p><em>If our vegetables are green beans: cook them 5 minutes, if they are potatoes cook them 15 minutes, but if they are carrots: cook them 10 minutes</em></p>
+<p>We could consider to write our code in the following manner:</p>
+<pre><code>    if Vegies are green beans then:
+        cook Vegies for 5 minutes
+    otherwise:
+        if Vegies are potatoes then:
+            cook Vegies for 15 minutes
+        otherwise:
+            if Vegies are carrots then:
+                cook Vegies for 10 minutes
+</code></pre>
+<p>Although this code is correct, it is somehow cumbersome.  We could forget to indent correctly the code and in this case it would be pretty complicated to follow up. We could need to add many cases and our code will grow towards the right of the screen, eventually requiring us to buy a second display. Even when having a multi display setup can be neat in many scenarios, our left screen will be solely used to print spaces, which is not a very efficient use of our resources.</p>
+<p>Let's try to compact this:</p>
+<pre><code>    if Vegies are any of the following: 
+        Green beans, then: 
+            cook Vegies for 5 minutes
+        Potatoes, then: 
+            cook Vegies for 15 minutes
+        Carrots, then: 
+            cook Vegies for 10 minutes
+</code></pre>
+<p>The code we wrote is now more compact, nevertheless it provides us with the same instructions to proceed with our recipe. In some programming languages this looks like:</p>
+<a class="header" href="print.html#c-and-c-1" id="c-and-c-1"><h4>C and C++</h4></a>
+<pre><code class="language-C">    switch(vegies) {
+        case green_beans: 
+            cook(vegies, 5);
+            break;
+        case potatoes: 
+            cook(vegies, 15);
+            break;
+        case carrots: 
+            cook(vegies, 10);
+            break;
+    }
+</code></pre>
+<p>TODO: java? pascal? python has not: make a note</p>
+<a class="header" href="print.html#repeat-after-me-loop-conditions" id="repeat-after-me-loop-conditions"><h4>Repeat after me: Loop Conditions</h4></a>
+<p>More than often we will want to repeat some steps to finish a task. An example is pealing potatoes:</p>
+<a class="header" href="print.html#pseudocook" id="pseudocook"><h4>PseudoCook</h4></a>
+<pre><code>    While there are potatoes in the pot:
+        take one potato from the pot.
+        peel potato
+        drop potatoe in the sink
+</code></pre>
+<p>This will then look like:</p>
+<a class="header" href="print.html#python-4" id="python-4"><h4>Python</h4></a>
+<pre><code class="language-python">    while not pot.empty():
+        potatoe = pot.pop()
+        peel(potatoe)
+        sink.append(potatoe)
+</code></pre>
+<p>The use of this conditional branches is natural and easy to understand. Nevertheless there are some considerations to keep in mind: We may want to repeat an action as long as a condition is satisfied, or we may want to do something first and repeat until a condition is satisfied. There is a third kind of loop that will simplify most of our code: the for each loop. This kind of loop will allow us to execute some code for every element inside of a collection, whenever this element is a vegetable in a pot, a dish in the sink or an integer number in a list of numbers.</p>
+<table><thead><tr><th align="center"> kind of loop </th><th align="center"> what does it mean </th></tr></thead><tbody>
+<tr><td align="center"> While </td><td align="center"> Repeat a task while the condition is satisfied </td></tr>
+<tr><td align="center"> Until </td><td align="center"> Do a task, and repeat if a condition is <strong>not</strong> satisfied </td></tr>
+<tr><td align="center"> For each </td><td align="center"> execute task for each element inside of a collection </td></tr>
+<tr><td align="center"> Infinite loop </td><td align="center"> Just like that, loop forever. Forever ever... or maybe not, as we will see later </td></tr>
+</tbody></table>
+<p>Loops have some properties which let us convert them into other kind of loops.</p>
+<ul>
+<li>If the condition for a  <em>while</em> loop is not satisfied from a beginning, the loop task will not be executed.</li>
+<li>If we know how to evaluate the condition of an <em>until</em> loop up front, we can write such as a <em>while</em> loop using the negated condition.</li>
+<li>If we can enumerate the elements in a collection, we can loop throw the natural numbers from 0 to the collection size, then use the current index to access the element:</li>
+</ul>
+<p><em>I have 4 apples in the basket: pick up the first apple ..., then pick up the seconnd one...</em></p>
+<p>When to use each kind of loop can be confusing: each loop can be expressed somehow using another kind. Even so, the art of choosing the right tool is the path to clean code easy to understand, which is good performing as well.</p>
+<a class="header" href="print.html#while-loop-in-c" id="while-loop-in-c"><h4>While Loop in C</h4></a>
+<pre><code class="language-C">    // compute the factoral of 10
+    int x = 10;
+    int result = 1;
+    While (x &lt; 0) {
+        result = result * x;
+        x = x-1;
+    }
+</code></pre>
+<a class="header" href="print.html#until-loop-in-c" id="until-loop-in-c"><h4>Until Loop in C</h4></a>
+<pre><code class="language-C">    // compute the factoral of 10
+    int x = 10;
+    int result = 1;
+    do {
+        result = result * x;
+        x = x-1;
+    }
+    While (x &gt; 0); // notice the semicolon after while, this is important!
+</code></pre>
+<a class="header" href="print.html#for-each-loop-in-c" id="for-each-loop-in-c"><h4>For Each Loop in C</h4></a>
+<pre><code class="language-C">    // compute the factoral of 10
+    int result = 1;
+    for (int x = 10; x &gt; 0; ++x){
+        result = result * x;
+        x = x-1;
+    }
+</code></pre>
+<a class="header" href="print.html#for-each-loop-in-python" id="for-each-loop-in-python"><h4>For Each Loop in Python</h4></a>
+<pre><code class="language-C">    # compute the factoral of 10
+    result = 1;
+    for x in range(10, 1):
+        result = result * x;
+</code></pre>
+<a class="header" href="print.html#break-the-flow" id="break-the-flow"><h3>Break the flow</h3></a>
+<p>So far we have enough tools to automatize almost any process. Internally, computers do not have much more instructions than what we have seen until now. Unfortunately we live in an imperfect world and out program may have to deal with all kind of undesired scenarios. Most of the time you spend programming you may be thinking on what else could be happening or how to handle certain scenarios, and you may end up writing complicated chains and waterfalls of conditions to do the right thing every time. To improve the code quality we have some rules, than may let us break the rules:</p>
+<a class="header" href="print.html#pseudocook-1" id="pseudocook-1"><h4>PseudoCook</h4></a>
+<pre><code>    for each onion in the basket:
+        if the onion is not too small:
+            wash the onion
+            peal the onion
+            if the onion is still fresh:
+                Chop the onion
+                put the chooped onion in the pot
+            else:
+                throw away the onion
+</code></pre>
+<p>As we had 3 kilos of onions, now we had 3 kilos of chopped onions (minus a tinny little bit that got wasted in the way, and 3 onions that were no longer fresh).  This is now way to much onion for my pot, lets try to optimize our onion consumption here:</p>
+<pre><code>    while pot not full:
+        while onions in basket:
+            if the onion is not too small:
+                wash the onion
+                peal the onion
+                if the onion is still fresh:
+                    Chop the onion
+                    put the chooped onion in the pot
+                else:
+                    throw away the onion
+</code></pre>
+<p>After looking at this code we will realize that we will chop all the onions again, just to find out that we messed it up again. Lets try one more time:</p>
+<pre><code>    while pot not full and onions in basket:
+        if the onion is not too small:
+            wash the onion
+            peal the onion
+            if the onion is still fresh:
+                Chop the onion
+                put the chooped onion in the pot
+            else:
+                throw away the onion
+</code></pre>
+<p>Ok, I this looks like right already. Although this code is correct, we may want to simplify the whole thing a little bit:</p>
+<pre><code>    for each onion in basket:
+        if the pot is full:
+            We are done, ignore the rest.
+
+        if the onion is too small:
+           ignore the rest, continue with the loop
+        
+        wash the onion
+        peal the onion
+
+        if the onion is not fresh:
+           throw away the onion
+           ignore the rest, continue with the loop
+
+        Chop the onion
+        put the chooped onion in the pot
+</code></pre>
+<p>This technique is called <em>early bail out</em> and it will make our code more readable because of two reasons:</p>
+<ul>
+<li>It simplifies the conditions, we ask one thing at the time this allows us humans to better think our moves.</li>
+<li>It reduces the amount of nesting conditional branches, we will reduce the amount of <em>loops</em> and <em>ifs</em> that we nest inside of each other, which makes the code much easier to read.</li>
+</ul>
+<p>Said that, those are the magic keywords that will let us break the flow as we please:</p>
+<table><thead><tr><th align="center"> Statement </th><th> What it does </th><th> Where to use it </th></tr></thead><tbody>
+<tr><td align="center"> Break     </td><td align="center"> it breaks the current loop and exits, it ignores if conditions and breaks the first loop found upwards </td><td align="center"> When inside of a loop, but we have already completed the whole loop task. When we have more onions but the pot is full </td></tr>
+<tr><td align="center"> Continue </td><td align="center"> it breaks the task for the current iteration, but it continues with the next </td><td align="center"> When we do not want to consider this one iteration but we need to continue: The onion is just to small, we move to the next </td></tr>
+<tr><td align="center"> Return </td><td align="center"> This statement breaks the current function and any loop in it, no matter how many nested loops we have </td><td align="center"> We will talk about this in the next chapter </td></tr>
+<tr><td align="center"> Program exit </td><td align="center"> Kill our program </td><td align="center"> Every programming language has some means to blow up the whole thing in a controlled manner. Sometimes is just the easier way </td></tr>
+</tbody></table>
+<a class="header" href="print.html#summary" id="summary"><h3>Summary</h3></a>
+<ul>
+<li>Control flow statements
+<ul>
+<li>Conditional Branches
+<ul>
+<li>Simple:  <code>if</code> / <code>if else</code></li>
+<li>Multiple</li>
+</ul>
+</li>
+<li>Loop
+<ul>
+<li>While</li>
+<li>Until</li>
+<li>For each</li>
+<li>infinite</li>
+</ul>
+</li>
+<li>Break flow
+<ul>
+<li>Break</li>
+<li>Continue</li>
+<li>Return</li>
+<li>Program exit</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<a class="header" href="print.html#exercises-1" id="exercises-1"><h3>Exercises</h3></a>
 <a class="header" href="print.html#the-first-and-only-tool-to-write-less-functions" id="the-first-and-only-tool-to-write-less-functions"><h2>The first and only tool to write less: Functions.</h2></a>
 <p>When cooking, there are some steps which can be described once and then used more than one time. For example: <em>cutting vegetables</em>.</p>
 <a class="header" href="print.html#how-to-cut-vegetables" id="how-to-cut-vegetables"><h4>How to cut vegetables:</h4></a>
@@ -370,6 +575,20 @@ else
 
         <!-- Livereload script (if served using the cli tool) -->
         
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3001");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload(true); // force reload from server (not from cache)
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+    
 
         
 
